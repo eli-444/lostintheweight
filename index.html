@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Des recettes simples, gourmandes et équilibrées pour avancer sereinement.">
+  <title>À table, doucement — Recettes équilibrées</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .shaker-modal { max-height: calc(100dvh - 32px); overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable; }
+    .shaker-close { position: sticky; z-index: 3; float: right; top: 14px; margin-right: 16px; margin-bottom: -35px; box-shadow: 0 3px 12px rgba(39,59,46,.12); }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#accueil" aria-label="Retour à l'accueil"><span class="brand-mark">a.</span><span>À table, doucement</span></a>
+    <button class="menu-button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <nav aria-label="Navigation principale">
+      <a href="#recettes">Les recettes</a><a href="#repères">Mes repères</a><a href="#douceur">En douceur</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="hero-copy">
+        <p class="eyebrow">Bien manger, sans se compliquer</p>
+        <h1>Retrouver l’équilibre,<br><em>une assiette à la fois.</em></h1>
+        <p class="hero-text">Des idées simples, généreuses et riches en protéines pour prendre soin de soi sans renoncer au plaisir.</p>
+        <div class="hero-actions"><a class="button primary" href="#recettes">Découvrir les recettes <span>↓</span></a><a class="text-link" href="#repères">Voir les repères du quotidien</a></div>
+        <p class="reassurance"><span>✓</span> 30 recettes accessibles <span>✓</span> Pensées pour le quotidien</p>
+      </div>
+      <div class="hero-visual" aria-label="Illustration d'une assiette équilibrée">
+        <div class="sun"></div><div class="leaf leaf-one"></div><div class="leaf leaf-two"></div>
+        <div class="plate"><div class="food rice"></div><div class="food greens">✦</div><div class="food protein"></div><div class="food tomato"></div></div>
+        <div class="note-card"><span>Objectif du guide</span><strong>≈ 2 900</strong><small>kcal / jour</small></div>
+      </div>
+    </section>
+
+    <section class="daily" id="repères">
+      <div><p class="eyebrow">Un cap, pas une contrainte</p><h2>Les repères qui font du bien</h2></div>
+      <div class="guide-grid" id="guides"></div>
+    </section>
+
+    <section class="recipes-section" id="recettes">
+      <div class="section-heading"><div><p class="eyebrow">Pour toutes les envies</p><h2>Qu’est-ce qu’on mange aujourd’hui ?</h2></div><p>Choisis un moment de la journée, ou laisse-toi simplement inspirer.</p></div>
+      <div class="toolbar">
+        <div class="filters" role="group" aria-label="Filtrer les recettes">
+          <button class="filter active" data-filter="Tous">Toutes <span>30</span></button>
+          <button class="filter" data-filter="Petit-déjeuner">Matins <span>8</span></button>
+          <button class="filter" data-filter="Déjeuner">Déjeuners <span>11</span></button>
+          <button class="filter" data-filter="Dîner">Dîners <span>7</span></button>
+          <button class="filter" data-filter="Collation">Collations <span>4</span></button>
+          <button class="filter" data-filter="Favoris">Mes favoris <span id="favorite-count">0</span></button>
+        </div>
+        <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Rechercher une recette…" aria-label="Rechercher une recette"></label>
+      </div>
+      <p class="results-count" id="results-count"></p>
+      <div class="recipe-grid" id="recipe-grid"></div>
+      <div class="empty" id="empty" hidden><span>☁</span><h3>Rien par ici pour le moment</h3><p>Essaie un autre mot ou un autre filtre.</p></div>
+    </section>
+
+    <section class="day-plan">
+      <div class="plan-intro"><p class="eyebrow">Une journée toute simple</p><h2>Composer sans calculer</h2><p>Un exemple équilibré tiré du carnet, à adapter selon ta faim, ton rythme et tes besoins.</p><div class="plan-total"><strong>2 920</strong><span>kcal au total<br><small>portions à personnaliser</small></span></div></div>
+      <div class="timeline">
+        <div><time>08:00</time><span class="dot"></span><p><small>Petit-déjeuner · 540 kcal</small><strong>Skyr, banane & beurre de cacahuète</strong></p></div>
+        <div><time>12:30</time><span class="dot"></span><p><small>Déjeuner · 760 kcal</small><strong>Poulet paprika & pommes de terre</strong></p></div>
+        <div><time>16:30</time><span class="dot"></span><p><small>Collation · 220 kcal</small><strong>Skyr & pomme</strong></p></div>
+        <div><time>19:30</time><span class="dot"></span><p><small>Dîner · 790 kcal</small><strong>Saumon & pommes de terre</strong></p></div>
+        <div><time>Selon la faim</time><span class="dot"></span><p><small>Complément · ≈ 610 kcal</small><strong>Une portion adaptée à ton quotidien</strong></p></div>
+      </div>
+    </section>
+
+    <section class="gentle" id="douceur">
+      <div class="gentle-copy"><p class="eyebrow">Sans interdit, avec conscience</p><h2>À savourer plus occasionnellement</h2><p>Il ne s’agit pas de bannir. Simplement de reconnaître les aliments moins rassasiants ou très denses, pour les choisir en connaissance de cause.</p><p class="gentle-note">Un repas ne change pas un parcours. C’est la régularité, pas la perfection, qui fait la différence.</p></div>
+      <div class="limit-list" id="limit-list"></div>
+    </section>
+  </main>
+
+  <footer><div class="brand"><span class="brand-mark">a.</span><span>À table, doucement</span></div><p>Un petit guide pour avancer avec gourmandise et bienveillance.</p><a href="#accueil">Retour en haut ↑</a><small>Les besoins nutritionnels varient d’une personne à l’autre. En cas de doute, demande conseil à un professionnel de santé.</small></footer>
+
+  <button class="shaker-launch" id="shaker-launch" aria-label="Composer une journée de recettes à 2 900 calories"><span class="shaker-icon">↻</span><span><strong>Shaker</strong><small>Ma journée</small></span></button>
+  <dialog id="shaker-modal" class="shaker-modal"><button class="shaker-close" aria-label="Fermer">×</button><div class="shaker-head"><span class="big-shaker" aria-hidden="true">↻</span><p class="eyebrow">Laisse le hasard bien faire</p><h2>Ta journée à 2 900 kcal</h2><p>Un menu complet, prêt à cuisiner. Secoue autant de fois que tu veux.</p><button id="shake-again" class="button primary"><span>↻</span> Shaker ma journée</button></div><div id="shaker-results" class="shaker-results"></div></dialog>
+  <dialog id="recipe-modal"><button class="modal-close" aria-label="Fermer">×</button><div id="modal-content"></div></dialog>
+  <script src="script.js"></script>
+</body>
+</html>
